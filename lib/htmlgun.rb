@@ -7,9 +7,10 @@ class HTMLgun
     Mailgun::init api_key, api_url
   end
 
-  def self.send_html the_sender, the_recipient, the_subject,the_body
+  def self.send_html the_sender,the_from, the_recipient, the_subject,the_body
       mail = Mail.new do 
-        from    the_sender
+        sender  the_sender
+        from    the_from
         to      the_recipient
         subject the_subject
 
